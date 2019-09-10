@@ -158,8 +158,8 @@ class Admin
 		 * Add a settings page for this plugin to the Settings menu.
 		 */
 		$this->plugin_screen_hook_suffix = add_options_page(
-			__('WP Reactivate', $this->plugin_slug),
-			__('WP Reactivate', $this->plugin_slug),
+			__('WP Currency Converter', $this->plugin_slug),
+			__('WP Currency Converter', $this->plugin_slug),
 			'manage_options',
 			$this->plugin_slug,
 			array($this, 'display_plugin_admin_page')

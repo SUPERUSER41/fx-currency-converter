@@ -4,7 +4,7 @@ WP Currency Converter is a React currency converter built specifically for WordP
 
 <!-- TOC -->
 
-- [WP Reactivate](#wp-currency-converter)
+- [WP Currency Converter](#wp-currency-converter)
   - [Setup and installation](#setup-and-installation)
   - [Usage](#usage)
   - [Quick Start](#quick-start)
@@ -88,7 +88,7 @@ export default class Shortcode extends Component {
   render() {
     return (
       <div className="wrap">
-        <h1>WP Reactivate Frontend</h1>
+        <h1>WP Currency Converter Frontend</h1>
         <p>Title: {this.props.wpObject.title}</p>
       </div>
     );
@@ -136,7 +136,7 @@ export default class Widget extends Component {
   render() {
     return (
       <div className="wrap">
-        <h1>WP Reactivate Widget</h1>
+        <h1>WP Currency Converter Widget</h1>
         <p>Title: {this.props.wpObject.title}</p>
       </div>
     );
