@@ -1,8 +1,6 @@
-![alt-text](https://cloud.githubusercontent.com/assets/1805604/26199709/55c91bda-3bcb-11e7-871e-94b7a022cfa9.jpg "WP Reactivate - WordPress React Boilerplate")
+# WP Currency Converter
 
-# WP Reactivate
-
-WP Reactivate is a React boilerplate built specifically for WordPress, allowing you to quickly and easily integrate React into your WordPress plugins.
+WP Currency Converter is a React currency converter built specifically for WordPress.
 
 <!-- TOC -->
 
@@ -13,9 +11,7 @@ WP Reactivate is a React boilerplate built specifically for WordPress, allowing 
     - [Introduction](#introduction)
     - [Using the Shortcode](#using-the-shortcode)
     - [Using the Widget](#using-the-widget)
-    - [Using REST Controllers](#using-rest-controllers)
     - [Using the Settings Page](#using-the-settings-page)
-    - [Using fetchWP](#using-fetchwp)
   - [Technologies](#technologies)
   - [Tutorials](#tutorials)
   - [Credits](#credits)
@@ -148,14 +144,6 @@ export default class Widget extends Component {
 }
 ```
 
-### Using REST Controllers
-
-We have included a single base REST controller class in the plugin. You will need to use this controller to create endpoints to interact with your React components. Depending on the complexity of your plugin you may need to have multiple controllers or may want to extend default WordPress REST API endpoints.
-
-We have chosen the custom controller approach for its control and flexibility. Please see the WordPress developer documentation on adding [custom endpoints](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/) and specifically the [controller pattern](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/#the-controller-pattern) to familiarise your with our choice of implementation.
-
-It is important to become well versed in using the [WordPress REST API](https://developer.wordpress.org/rest-api/) as this is how you will be passing data to and from your React applications.
-
 ### Using the Settings Page
 
 In our admin class we add a sub menu page to the Settings menu using `add_options_page` and render the React Admin container onto the root DOM node.
@@ -167,52 +155,6 @@ public function display_plugin_admin_page() {
  ?><div id="wp-currency-converter-admin"></div><?php
 }
 ```
-
-### Using fetchWP
-
-We have provided a utility class called fetchWP which is a simple abstraction over the [Fetch API](https://developer.mozilla.org/en/docs/Web/API/Fetch_API) which allows you to easily make requests to the WordPress REST API.
-
-In the React container component we show how to retrieve and update this setting via the example [REST controller](#using-rest-controllers) included in the boilerplate.
-
-First we initialise fetchWP in the ES6 class constructor of our container component. It requires two parameters being the REST URL and the REST nonce which can be supplied from our wpObject.
-
-_app/containers/Admin.jsx_
-
-```javascript =7
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      example_setting: '',
-    };
-
-    this.fetchWP = new fetchWP({
-      restURL: this.props.wpObject.api_url,
-      restNonce: this.props.wpObject.api_nonce,
-    });
-
-    this.getSetting();
-  }
-```
-
-In the getSetting call you can now see how we use the utility to perform a GET request on the 'example' endpoint.
-
-_app/containers/Admin.jsx_
-
-```javascript =22
-getSetting = () => {
-  this.fetchWP.get("example").then(
-    json =>
-      this.setState({
-        example_setting: json.value,
-        saved_example_setting: json.value
-      }),
-    err => console.log("error", err)
-  );
-};
-```
-
-We have found this utility covers most of our use cases. If you are looking for something more full featured (especially if you are working with standard WP endpoints) then have a look at [node-wpapi](http://wp-api.org/node-wpapi/).
 
 ## Technologies
 
@@ -232,4 +174,5 @@ Building a WordPress plugin with React - [Part 1](https://github.com/SUPERUSER41
 ## Credits
 
 _Made by [SUPERUSER41](https://github.com/SUPERUSER41)_
+
 # fx-currency-converter
