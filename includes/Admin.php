@@ -11,7 +11,7 @@
  * @copyright 2019SUPERUSER41
  */
 
-SUPERUSER41\CC;
+namespace SUPERUSER41\CC;
 
 /**
  * @subpackage Admin
