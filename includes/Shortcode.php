@@ -92,7 +92,7 @@ class Shortcode
 		$object_name = 'cc_object_' . uniqid();
 
 		$object = shortcode_atts(array(
-			'title'       => 'Hello world',
+			'title'       => 'Currency Converter',
 			'api_nonce'   => wp_create_nonce('wp_rest'),
 			'api_url'	  => rest_url($this->plugin_slug . '/v1/'),
 		), $atts, 'wp-currency-converter');
