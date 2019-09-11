@@ -123,12 +123,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-!(function webpackMissingModule() { var e = new Error("Cannot find module './IPPSwitch'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _Switch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Switch */ "./app/currency-converter-components/Switch.js");
 /* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Form */ "./app/currency-converter-components/Form.js");
 /* harmony import */ var _Results__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Results */ "./app/currency-converter-components/Results.js");
-/* harmony import */ var _assets_css_App_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../assets/css/App.css */ "./assets/css/App.css");
-/* harmony import */ var _assets_css_App_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_assets_css_App_css__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _assets_css_App_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../assets/css/App.css */ "./assets/css/App.css");
+/* harmony import */ var _assets_css_App_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assets_css_App_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* eslint-disable no-undef */
 
 /* eslint-disable react/prop-types */
@@ -185,7 +185,7 @@ const App = props => {
     className: "card-title"
   }, "FX CURRENCY CONVERTER")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-md-3"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(!(function webpackMissingModule() { var e = new Error("Cannot find module './IPPSwitch'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Switch__WEBPACK_IMPORTED_MODULE_2__["default"], {
     swap: swap
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {
     setBase: props.setBase,
@@ -242,7 +242,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_5__["connect"])(mapStateToProps, mapDispatchToProps)(App));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_6__["connect"])(mapStateToProps, mapDispatchToProps)(App));
 
 /***/ }),
 
@@ -573,6 +573,75 @@ const Select = props => {
 
 /***/ }),
 
+/***/ "./app/currency-converter-components/Switch.js":
+/*!*****************************************************!*\
+  !*** ./app/currency-converter-components/Switch.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _assets_css_Switch_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../assets/css/Switch.css */ "./assets/css/Switch.css");
+/* harmony import */ var _assets_css_Switch_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_assets_css_Switch_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_switch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-switch */ "./node_modules/react-switch/index.js");
+/* harmony import */ var react_switch__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_switch__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* eslint-disable react/prop-types */
+
+
+
+
+
+const IPPSwitch = props => {
+  const handleChange = () => {
+    props.swap();
+    props.handleToggle(props.toggle);
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    className: "flex-item"
+  }, "SELLING"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex-item"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_switch__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    className: "switch",
+    onColor: "#ffffff",
+    offColor: "#C9C9C9",
+    onHandleColor: "#92245D",
+    uncheckedIcon: false,
+    checkedIcon: false,
+    onChange: handleChange,
+    checked: props.toggle
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    className: "flex-item"
+  }, "BUYING"));
+};
+
+const mapStateToProps = state => {
+  return {
+    toggle: state.main.toggle
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    handleToggle: toggle => {
+      dispatch({
+        type: "SET_TOGGLE",
+        toggle: !toggle
+      });
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps, mapDispatchToProps)(IPPSwitch));
+
+/***/ }),
+
 /***/ "./app/reducers/index.js":
 /*!*******************************!*\
   !*** ./app/reducers/index.js ***!
@@ -820,6 +889,33 @@ if (content.locals) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./Select.css */ "./node_modules/css-loader/dist/cjs.js!./assets/css/Select.css");
+
+if (typeof content === 'string') {
+  content = [[module.i, content, '']];
+}
+
+var options = {}
+
+options.insert = "head";
+options.singleton = false;
+
+var update = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js")(content, options);
+
+if (content.locals) {
+  module.exports = content.locals;
+}
+
+
+/***/ }),
+
+/***/ "./assets/css/Switch.css":
+/*!*******************************!*\
+  !*** ./assets/css/Switch.css ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./Switch.css */ "./node_modules/css-loader/dist/cjs.js!./assets/css/Switch.css");
 
 if (typeof content === 'string') {
   content = [[module.i, content, '']];
@@ -12125,6 +12221,20 @@ exports.push([module.i, ".card {\n    background: #93245e;\n    font-family: 'Wo
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
 exports.push([module.i, ".select--arrow {\n    width: 30px;\n    height: 30px;\n    position: absolute;\n    right: 10px;\n    top: 30px;\n    margin: 0;\n    padding: 0;\n\n}\n\n.select--container {\n    width: 100%;\n    margin: 0;\n    height: 55px;\n    border: 1px solid #ced4da;\n    box-sizing: border-box;\n    display: inline-block;\n    background: white;\n    background-clip: padding-box;\n    border-radius: .3rem;\n    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;\n}\n\n.selected {\n    /* background: #54C6EB; */\n}\n\n.currencies {\n    padding-right: 0;\n    padding-left: 0;\n}\n\n.currencies:hover {\n    /* background: #E8E8E8; */\n}\n\n.select--selected-item {\n    display: inline-block;\n    height: 100%;\n    width: 100%;\n    padding: 0px 0 0 5px;\n    vertical-align: middle;\n}\n\n.flag {\n\n    width: 45px;\n    height: 45px;\n}\n\n\n\n.select--items {\n    background: white;\n    z-index: 1;\n    margin-top: 10px;\n    position: absolute;\n    border-radius: .3rem;\n    padding: 8px;\n\n}\n\n.select--arrow-down {\n    position: absolute;\n    top: 12px;\n    left: 8px;\n    width: 0;\n    height: 0;\n    border-left: 8px solid transparent;\n    border-right: 8px solid transparent;\n    border-top: 10px solid #993368;\n}\n\n.select--arrow-up {\n    position: absolute;\n    top: 10px;\n    left: 8px;\n    width: 0;\n    height: 0;\n    border-left: 8px solid transparent;\n    border-right: 8px solid transparent;\n    border-bottom: 10px solid #993368;\n}\n\n\n.currency-block {\n    margin-left: 5px;\n    font-family: 'Oswald', sans-serif;\n}\n\n\n.currency-code {\n    font-size: 22px;\n    font-weight: bold;\n    margin: 0;\n    color: #993368;\n}\n\n.currency-name {\n    font-size: 13px;\n    margin: 0;\n    font-family: 'Work Sans', sans-serif;\n    color: #280A3B;\n}", ""]);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./assets/css/Switch.css":
+/*!*********************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./assets/css/Switch.css ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, ".switch {\n    bottom: 5px;\n}\n\n.flex-container {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n}\n\n.switch input {\n    position: absolute;\n    top: 0;\n    z-index: 2;\n    opacity: 0;\n    cursor: pointer;\n}\n\n.switch input:checked {\n    z-index: 1;\n}\n\n.switch input:checked+label {\n    opacity: 1;\n    cursor: default;\n}\n\n.switch input:not(:checked)+label:hover {\n    opacity: 0.5;\n}\n\n.switch label {\n    color: #fff;\n    font-size: 18px;\n    opacity: 0.33;\n    transition: opacity 0.25s ease;\n    cursor: pointer;\n}\n\n.switch .toggle-outside {\n    height: 40px;\n    border-radius: 2rem;\n    padding: 0.25rem;\n    overflow: hidden;\n    transition: 0.25s ease all;\n}\n\n.switch .toggle-inside {\n    border-radius: 5rem;\n    background: #fff;\n    position: absolute;\n    transition: 0.25s ease all;\n}\n\n.switch--horizontal {\n    width: 18rem;\n    height: 3rem;\n    margin: 0 auto;\n    font-size: 0;\n    margin-bottom: 1rem;\n}\n\n.switch--horizontal input {\n    height: 3rem;\n    width: 6rem;\n    left: 6rem;\n    margin: 0;\n}\n\n.switch--horizontal label {\n    font-size: 18px;\n    line-height: 3rem;\n    display: inline-block;\n    width: 6rem;\n    height: 100%;\n    margin: 0;\n    text-align: center;\n}\n\n.switch--horizontal label:last-of-type {\n    margin-left: 3rem;\n}\n\n.switch--horizontal .toggle-outside {\n    background: transparent;\n    position: absolute;\n    border-style: solid;\n    border-width: 1px;\n    border-color: white;\n    width: 5rem;\n    left: 5rem;\n}\n\n.switch--horizontal .toggle-inside {\n    height: 2rem;\n    width: 2rem;\n    bottom: 3px;\n}\n\n@media only screen and (max-width: 768px) {\n    .switch--horizontal .toggle-inside {\n        bottom: 5px;\n    }\n}\n\n.switch--horizontal input:checked~.toggle-outside .toggle-inside {\n    left: 0.25rem;\n}\n\n.switch--horizontal input~input:checked~.toggle-outside .toggle-inside {\n    left: 2.7rem;\n}", ""]);
 
 
 /***/ }),
@@ -58177,6 +58287,551 @@ function warning(message) {
   /* eslint-enable no-empty */
 
 }
+
+/***/ }),
+
+/***/ "./node_modules/react-switch/dist/react-switch.dev.js":
+/*!************************************************************!*\
+  !*** ./node_modules/react-switch/dist/react-switch.dev.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var PropTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+/*
+The MIT License (MIT)
+
+Copyright (c) 2015 instructure-react
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+var uncheckedIcon = React.createElement('svg', {
+  viewBox: "-2 -5 14 20",
+  height: "100%",
+  width: "100%",
+  style: {
+    position: "absolute",
+    top: 0
+  }
+}, React.createElement('path', {
+  d: "M9.9 2.12L7.78 0 4.95 2.828 2.12 0 0 2.12l2.83 2.83L0 7.776 2.123 9.9 4.95 7.07 7.78 9.9 9.9 7.776 7.072 4.95 9.9 2.12",
+  fill: "#fff",
+  fillRule: "evenodd"
+}));
+var checkedIcon = React.createElement('svg', {
+  height: "100%",
+  width: "100%",
+  viewBox: "-2 -5 17 21",
+  style: {
+    position: "absolute",
+    top: 0
+  }
+}, React.createElement('path', {
+  d: "M11.264 0L5.26 6.004 2.103 2.847 0 4.95l5.26 5.26 8.108-8.107L11.264 0",
+  fill: "#fff",
+  fillRule: "evenodd"
+}));
+
+function createBackgroundColor(pos, checkedPos, uncheckedPos, offColor, onColor) {
+  var relativePos = (pos - uncheckedPos) / (checkedPos - uncheckedPos);
+
+  if (relativePos === 0) {
+    return offColor;
+  }
+
+  if (relativePos === 1) {
+    return onColor;
+  }
+
+  var newColor = "#";
+
+  for (var i = 1; i < 6; i += 2) {
+    var offComponent = parseInt(offColor.substr(i, 2), 16);
+    var onComponent = parseInt(onColor.substr(i, 2), 16);
+    var weightedValue = Math.round((1 - relativePos) * offComponent + relativePos * onComponent);
+    var newComponent = weightedValue.toString(16);
+
+    if (newComponent.length === 1) {
+      newComponent = "0" + newComponent;
+    }
+
+    newColor += newComponent;
+  }
+
+  return newColor;
+}
+
+function convertShorthandColor(color) {
+  if (color.length === 7) {
+    return color;
+  }
+
+  var sixDigitColor = "#";
+
+  for (var i = 1; i < 4; i += 1) {
+    sixDigitColor += color[i] + color[i];
+  }
+
+  return sixDigitColor;
+}
+
+function getBackgroundColor(pos, checkedPos, uncheckedPos, offColor, onColor) {
+  var sixDigitOffColor = convertShorthandColor(offColor);
+  var sixDigitOnColor = convertShorthandColor(onColor);
+  return createBackgroundColor(pos, checkedPos, uncheckedPos, sixDigitOffColor, sixDigitOnColor);
+}
+
+// Make sure color props are strings that start with "#" since other ways to write colors are not supported.
+var hexColorPropType = function (props, propName, componentName) {
+  var prop = props[propName];
+
+  if (typeof prop !== "string" || prop[0] !== "#" || prop.length !== 4 && prop.length !== 7) {
+    return new Error("Invalid prop '" + propName + "' supplied to '" + componentName + "'. '" + propName + "' has to be either a 3-digit or 6-digit hex-color string. Valid examples: '#abc', '#123456'");
+  }
+
+  return null;
+};
+
+function objectWithoutProperties(obj, exclude) {
+  var target = {};
+
+  for (var k in obj) if (Object.prototype.hasOwnProperty.call(obj, k) && exclude.indexOf(k) === -1) target[k] = obj[k];
+
+  return target;
+}
+
+var ReactSwitch =
+/*@__PURE__*/
+function (Component) {
+  function ReactSwitch(props) {
+    Component.call(this, props);
+    var height = props.height;
+    var width = props.width;
+    var handleDiameter = props.handleDiameter;
+    var checked = props.checked;
+    this.$handleDiameter = handleDiameter || height - 2;
+    this.$checkedPos = Math.max(width - height, width - (height + this.$handleDiameter) / 2);
+    this.$uncheckedPos = Math.max(0, (height - this.$handleDiameter) / 2);
+    this.state = {
+      $pos: checked ? this.$checkedPos : this.$uncheckedPos
+    };
+    this.$lastDragAt = 0;
+    this.$lastKeyUpAt = 0;
+    this.$onMouseDown = this.$onMouseDown.bind(this);
+    this.$onMouseMove = this.$onMouseMove.bind(this);
+    this.$onMouseUp = this.$onMouseUp.bind(this);
+    this.$onTouchStart = this.$onTouchStart.bind(this);
+    this.$onTouchMove = this.$onTouchMove.bind(this);
+    this.$onTouchEnd = this.$onTouchEnd.bind(this);
+    this.$onClick = this.$onClick.bind(this);
+    this.$onInputChange = this.$onInputChange.bind(this);
+    this.$onKeyUp = this.$onKeyUp.bind(this);
+    this.$setHasOutline = this.$setHasOutline.bind(this);
+    this.$unsetHasOutline = this.$unsetHasOutline.bind(this);
+    this.$getInputRef = this.$getInputRef.bind(this);
+  }
+
+  if (Component) ReactSwitch.__proto__ = Component;
+  ReactSwitch.prototype = Object.create(Component && Component.prototype);
+  ReactSwitch.prototype.constructor = ReactSwitch;
+
+  ReactSwitch.prototype.componentDidUpdate = function componentDidUpdate(prevProps) {
+    if (prevProps.checked === this.props.checked) {
+      return;
+    }
+
+    var $pos = this.props.checked ? this.$checkedPos : this.$uncheckedPos;
+    this.setState({
+      $pos: $pos
+    });
+  };
+
+  ReactSwitch.prototype.$onDragStart = function $onDragStart(clientX) {
+    this.$inputRef.focus();
+    this.setState({
+      $startX: clientX,
+      $hasOutline: true,
+      $dragStartingTime: Date.now()
+    });
+  };
+
+  ReactSwitch.prototype.$onDrag = function $onDrag(clientX) {
+    var ref = this.state;
+    var $startX = ref.$startX;
+    var $isDragging = ref.$isDragging;
+    var $pos = ref.$pos;
+    var ref$1 = this.props;
+    var checked = ref$1.checked;
+    var startPos = checked ? this.$checkedPos : this.$uncheckedPos;
+    var mousePos = startPos + clientX - $startX; // We need this check to fix a windows glitch where onDrag is triggered onMouseDown in some cases
+
+    if (!$isDragging && clientX !== $startX) {
+      this.setState({
+        $isDragging: true
+      });
+    }
+
+    var newPos = Math.min(this.$checkedPos, Math.max(this.$uncheckedPos, mousePos)); // Prevent unnecessary rerenders
+
+    if (newPos !== $pos) {
+      this.setState({
+        $pos: newPos
+      });
+    }
+  };
+
+  ReactSwitch.prototype.$onDragStop = function $onDragStop(event) {
+    var ref = this.state;
+    var $pos = ref.$pos;
+    var $isDragging = ref.$isDragging;
+    var $dragStartingTime = ref.$dragStartingTime;
+    var ref$1 = this.props;
+    var checked = ref$1.checked;
+    var halfwayCheckpoint = (this.$checkedPos + this.$uncheckedPos) / 2; // Simulate clicking the handle
+
+    var timeSinceStart = Date.now() - $dragStartingTime;
+
+    if (!$isDragging || timeSinceStart < 250) {
+      this.$onChange(event); // Handle dragging from checked position
+    } else if (checked) {
+      if ($pos > halfwayCheckpoint) {
+        this.setState({
+          $pos: this.$checkedPos
+        });
+      } else {
+        this.$onChange(event);
+      } // Handle dragging from unchecked position
+
+    } else if ($pos < halfwayCheckpoint) {
+      this.setState({
+        $pos: this.$uncheckedPos
+      });
+    } else {
+      this.$onChange(event);
+    }
+
+    this.setState({
+      $isDragging: false,
+      $hasOutline: false
+    });
+    this.$lastDragAt = Date.now();
+  };
+
+  ReactSwitch.prototype.$onMouseDown = function $onMouseDown(event) {
+    event.preventDefault(); // Ignore right click and scroll
+
+    if (typeof event.button === "number" && event.button !== 0) {
+      return;
+    }
+
+    this.$onDragStart(event.clientX);
+    window.addEventListener("mousemove", this.$onMouseMove);
+    window.addEventListener("mouseup", this.$onMouseUp);
+  };
+
+  ReactSwitch.prototype.$onMouseMove = function $onMouseMove(event) {
+    event.preventDefault();
+    this.$onDrag(event.clientX);
+  };
+
+  ReactSwitch.prototype.$onMouseUp = function $onMouseUp(event) {
+    this.$onDragStop(event);
+    window.removeEventListener("mousemove", this.$onMouseMove);
+    window.removeEventListener("mouseup", this.$onMouseUp);
+  };
+
+  ReactSwitch.prototype.$onTouchStart = function $onTouchStart(event) {
+    this.$checkedStateFromDragging = null;
+    this.$onDragStart(event.touches[0].clientX);
+  };
+
+  ReactSwitch.prototype.$onTouchMove = function $onTouchMove(event) {
+    this.$onDrag(event.touches[0].clientX);
+  };
+
+  ReactSwitch.prototype.$onTouchEnd = function $onTouchEnd(event) {
+    event.preventDefault();
+    this.$onDragStop(event);
+  };
+
+  ReactSwitch.prototype.$onInputChange = function $onInputChange(event) {
+    // This condition is unfortunately needed in some browsers where the input's change event might get triggered
+    // right after the dragstop event is triggered (occurs when dropping over a label element)
+    if (Date.now() - this.$lastDragAt > 50) {
+      this.$onChange(event); // Prevent clicking label, but not key activation from setting outline to true - yes, this is absurd
+
+      if (Date.now() - this.$lastKeyUpAt > 50) {
+        this.setState({
+          $hasOutline: false
+        });
+      }
+    }
+  };
+
+  ReactSwitch.prototype.$onKeyUp = function $onKeyUp() {
+    this.$lastKeyUpAt = Date.now();
+  };
+
+  ReactSwitch.prototype.$setHasOutline = function $setHasOutline() {
+    this.setState({
+      $hasOutline: true
+    });
+  };
+
+  ReactSwitch.prototype.$unsetHasOutline = function $unsetHasOutline() {
+    this.setState({
+      $hasOutline: false
+    });
+  };
+
+  ReactSwitch.prototype.$getInputRef = function $getInputRef(el) {
+    this.$inputRef = el;
+  };
+
+  ReactSwitch.prototype.$onClick = function $onClick(event) {
+    event.preventDefault();
+    this.$inputRef.focus();
+    this.$onChange(event);
+    this.setState({
+      $hasOutline: false
+    });
+  };
+
+  ReactSwitch.prototype.$onChange = function $onChange(event) {
+    var ref = this.props;
+    var checked = ref.checked;
+    var onChange = ref.onChange;
+    var id = ref.id;
+    onChange(!checked, event, id);
+  };
+
+  ReactSwitch.prototype.render = function render() {
+    var ref = this.props;
+    var disabled = ref.disabled;
+    var className = ref.className;
+    var offColor = ref.offColor;
+    var onColor = ref.onColor;
+    var offHandleColor = ref.offHandleColor;
+    var onHandleColor = ref.onHandleColor;
+    var checkedIcon$$1 = ref.checkedIcon;
+    var uncheckedIcon$$1 = ref.uncheckedIcon;
+    var boxShadow = ref.boxShadow;
+    var activeBoxShadow = ref.activeBoxShadow;
+    var height = ref.height;
+    var width = ref.width;
+    var handleDiameter = ref.handleDiameter;
+    var rest$1 = objectWithoutProperties(ref, ["disabled", "className", "offColor", "onColor", "offHandleColor", "onHandleColor", "checkedIcon", "uncheckedIcon", "boxShadow", "activeBoxShadow", "height", "width", "handleDiameter"]);
+    var rest = rest$1;
+    var ref$1 = this.state;
+    var $pos = ref$1.$pos;
+    var $isDragging = ref$1.$isDragging;
+    var $hasOutline = ref$1.$hasOutline;
+    var rootStyle = {
+      position: "relative",
+      display: "inline-block",
+      textAlign: "left",
+      opacity: disabled ? 0.5 : 1,
+      direction: "ltr",
+      borderRadius: height / 2,
+      WebkitTransition: "opacity 0.25s",
+      MozTransition: "opacity 0.25s",
+      transition: "opacity 0.25s",
+      touchAction: "none",
+      WebkitTapHighlightColor: "rgba(0, 0, 0, 0)",
+      WebkitUserSelect: "none",
+      MozUserSelect: "none",
+      msUserSelect: "none",
+      userSelect: "none"
+    };
+    var backgroundStyle = {
+      height: height,
+      width: width,
+      margin: Math.max(0, (this.$handleDiameter - height) / 2),
+      position: "relative",
+      background: getBackgroundColor($pos, this.$checkedPos, this.$uncheckedPos, offColor, onColor),
+      borderRadius: height / 2,
+      cursor: disabled ? "default" : "pointer",
+      WebkitTransition: $isDragging ? null : "background 0.25s",
+      MozTransition: $isDragging ? null : "background 0.25s",
+      transition: $isDragging ? null : "background 0.25s"
+    };
+    var checkedIconStyle = {
+      height: height,
+      width: Math.min(height * 1.5, width - (this.$handleDiameter + height) / 2 + 1),
+      position: "relative",
+      opacity: ($pos - this.$uncheckedPos) / (this.$checkedPos - this.$uncheckedPos),
+      pointerEvents: "none",
+      WebkitTransition: $isDragging ? null : "opacity 0.25s",
+      MozTransition: $isDragging ? null : "opacity 0.25s",
+      transition: $isDragging ? null : "opacity 0.25s"
+    };
+    var uncheckedIconStyle = {
+      height: height,
+      width: Math.min(height * 1.5, width - (this.$handleDiameter + height) / 2 + 1),
+      position: "absolute",
+      opacity: 1 - ($pos - this.$uncheckedPos) / (this.$checkedPos - this.$uncheckedPos),
+      right: 0,
+      top: 0,
+      pointerEvents: "none",
+      WebkitTransition: $isDragging ? null : "opacity 0.25s",
+      MozTransition: $isDragging ? null : "opacity 0.25s",
+      transition: $isDragging ? null : "opacity 0.25s"
+    };
+    var handleStyle = {
+      height: this.$handleDiameter,
+      width: this.$handleDiameter,
+      background: getBackgroundColor($pos, this.$checkedPos, this.$uncheckedPos, offHandleColor, onHandleColor),
+      display: "inline-block",
+      cursor: disabled ? "default" : "pointer",
+      borderRadius: "50%",
+      position: "absolute",
+      transform: "translateX(" + $pos + "px)",
+      top: Math.max(0, (height - this.$handleDiameter) / 2),
+      outline: 0,
+      boxShadow: $hasOutline ? activeBoxShadow : boxShadow,
+      border: 0,
+      WebkitTransition: $isDragging ? null : "background-color 0.25s, transform 0.25s, box-shadow 0.15s",
+      MozTransition: $isDragging ? null : "background-color 0.25s, transform 0.25s, box-shadow 0.15s",
+      transition: $isDragging ? null : "background-color 0.25s, transform 0.25s, box-shadow 0.15s"
+    };
+    var inputStyle = {
+      border: 0,
+      clip: "rect(0 0 0 0)",
+      height: 1,
+      margin: -1,
+      overflow: "hidden",
+      padding: 0,
+      position: "absolute",
+      width: 1
+    };
+    return React.createElement('div', {
+      className: className,
+      style: rootStyle
+    }, React.createElement('div', {
+      className: "react-switch-bg",
+      style: backgroundStyle,
+      onClick: disabled ? null : this.$onClick,
+      onMouseDown: function (e) {
+        return e.preventDefault();
+      }
+    }, checkedIcon$$1 && React.createElement('div', {
+      style: checkedIconStyle
+    }, checkedIcon$$1), uncheckedIcon$$1 && React.createElement('div', {
+      style: uncheckedIconStyle
+    }, uncheckedIcon$$1)), React.createElement('div', {
+      className: "react-switch-handle",
+      style: handleStyle,
+      onClick: function (e) {
+        return e.preventDefault();
+      },
+      onMouseDown: disabled ? null : this.$onMouseDown,
+      onTouchStart: disabled ? null : this.$onTouchStart,
+      onTouchMove: disabled ? null : this.$onTouchMove,
+      onTouchEnd: disabled ? null : this.$onTouchEnd,
+      onTouchCancel: disabled ? null : this.$unsetHasOutline
+    }), React.createElement('input', _extends({}, {
+      type: "checkbox",
+      role: "switch",
+      disabled: disabled,
+      style: inputStyle
+    }, rest, {
+      ref: this.$getInputRef,
+      onFocus: this.$setHasOutline,
+      onBlur: this.$unsetHasOutline,
+      onKeyUp: this.$onKeyUp,
+      onChange: this.$onInputChange
+    })));
+  };
+
+  return ReactSwitch;
+}(React.Component);
+
+ReactSwitch.propTypes = {
+  checked: PropTypes.bool.isRequired,
+  onChange: PropTypes.func.isRequired,
+  disabled: PropTypes.bool,
+  offColor: hexColorPropType,
+  onColor: hexColorPropType,
+  offHandleColor: hexColorPropType,
+  onHandleColor: hexColorPropType,
+  handleDiameter: PropTypes.number,
+  uncheckedIcon: PropTypes.oneOfType([PropTypes.bool, PropTypes.element]),
+  checkedIcon: PropTypes.oneOfType([PropTypes.bool, PropTypes.element]),
+  boxShadow: PropTypes.string,
+  activeBoxShadow: PropTypes.string,
+  height: PropTypes.number,
+  width: PropTypes.number,
+  id: PropTypes.string,
+  className: PropTypes.string
+};
+ReactSwitch.defaultProps = {
+  disabled: false,
+  offColor: "#888",
+  onColor: "#080",
+  offHandleColor: "#fff",
+  onHandleColor: "#fff",
+  uncheckedIcon: uncheckedIcon,
+  checkedIcon: checkedIcon,
+  boxShadow: null,
+  activeBoxShadow: "0 0 2px 3px #3bf",
+  height: 28,
+  width: 56
+};
+
+exports.default = ReactSwitch;
+
+
+/***/ }),
+
+/***/ "./node_modules/react-switch/index.js":
+/*!********************************************!*\
+  !*** ./node_modules/react-switch/index.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+if (false) {} else {
+  module.exports = __webpack_require__(/*! ./dist/react-switch.dev.js */ "./node_modules/react-switch/dist/react-switch.dev.js");
+}
+
 
 /***/ }),
 
