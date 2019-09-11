@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import Select from "./Select";
-import "../styles/Form.css";
+import "../assets/css/Form.css";
 import { connect } from "react-redux";
 
 const Form = props => {
