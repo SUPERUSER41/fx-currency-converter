@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from "react";
-import "../assets/css/Select.css";
+import "../../assets/css/Select.css";
 
 const Select = props => {
   const [items, setItems] = useState({ items: [] });
