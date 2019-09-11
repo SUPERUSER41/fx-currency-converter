@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
+//TODO: Show currency converter component here
 export default class Widget extends Component {
   render() {
     return (
