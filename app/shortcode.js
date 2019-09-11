@@ -3,8 +3,6 @@ if (!window._babelPolyfill) {
   require("@babel/polyfill");
 }
 
-//TODO: Add redux
-
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
@@ -18,11 +16,9 @@ document.addEventListener("DOMContentLoaded", function() {
   );
 
   for (let i = 0; i < shortcode_containers.length; ++i) {
-    const objectId = shortcode_containers[i].getAttribute("data-object-id");
-
     ReactDOM.render(
       <Provider store={createStore(RootReducer)}>
-        <Shortcode wpObject={window[objectId]} />
+        <Shortcode />
       </Provider>,
       shortcode_containers[i]
     );
