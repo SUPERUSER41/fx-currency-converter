@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import "../assets/css/Switch.css";
+import "../../assets/css/Switch.css";
 import Switch from "react-switch";
 import { connect } from "react-redux";
 
