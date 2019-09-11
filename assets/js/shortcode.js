@@ -101,6 +101,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 
+ //TODO: Show currency converter component here
 
 class Shortcode extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   render() {
@@ -131,16 +132,17 @@ __webpack_require__.r(__webpack_exports__);
 /* global window, document */
 if (!window._babelPolyfill) {
   __webpack_require__(/*! @babel/polyfill */ "./node_modules/@babel/polyfill/lib/index.js");
-}
+} //TODO: Add redux
 
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
-  const shortcode_containers = document.querySelectorAll('.wp-currency-converter-shortcode');
+
+document.addEventListener("DOMContentLoaded", function () {
+  const shortcode_containers = document.querySelectorAll(".wp-currency-converter-shortcode");
 
   for (let i = 0; i < shortcode_containers.length; ++i) {
-    const objectId = shortcode_containers[i].getAttribute('data-object-id');
+    const objectId = shortcode_containers[i].getAttribute("data-object-id");
     react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_Shortcode_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
       wpObject: window[objectId]
     }), shortcode_containers[i]);
