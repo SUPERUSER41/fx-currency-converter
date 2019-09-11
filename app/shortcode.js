@@ -7,6 +7,9 @@ if (!window._babelPolyfill) {
 
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import RootReducer from "./reducers";
 import Shortcode from "./containers/Shortcode.jsx";
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -18,7 +21,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const objectId = shortcode_containers[i].getAttribute("data-object-id");
 
     ReactDOM.render(
-      <Shortcode wpObject={window[objectId]} />,
+      <Provider store={createStore(RootReducer)}>
+        <Shortcode wpObject={window[objectId]} />
+      </Provider>,
       shortcode_containers[i]
     );
   }
