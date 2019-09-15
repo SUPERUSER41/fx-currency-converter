@@ -23,6 +23,9 @@ small {
     }
 }
 
+.converter-results {
+    color: #ffffff !important;
+}
 
 .exchange-rate {
     font-family: 'Archivo', sans-serif;
