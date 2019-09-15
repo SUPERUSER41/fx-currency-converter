@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from "react";
+import "../../assets/css/App.css";
 import { connect } from "react-redux";
 
 const Results = props => {
