@@ -8,7 +8,7 @@ const Results = props => {
     props.setShowResults(false);
   };
   return (
-    <div>
+    <div className="converter-results">
       <div className="row align-items-center justify-content-center mt-3">
         <h4 className="text-center font-weight-bold">
           {props.results.amount} {props.results.base} ={" "}
