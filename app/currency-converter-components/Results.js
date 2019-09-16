@@ -11,7 +11,7 @@ const Results = props => {
   return (
     <div className="converter-results">
       <div className="row align-items-center justify-content-center mt-3">
-        <h4 className="text-center font-weight-bold">
+        <h4 className="text-center text-white font-weight-bold">
           {props.results.amount} {props.results.base} ={" "}
         </h4>
       </div>
@@ -35,19 +35,19 @@ const Results = props => {
         </div>
       </div>
       <div className="row align-items-center justify-content-center mt-5">
-        <h5 className="text-center exchange-rate">
+        <h5 className="text-center text-white exchange-rate">
           1 {props.results.base} = {props.results.sell}{" "}
           {props.results.convertTo} | 1 {props.results.convertTo} ={" "}
           {props.results.buy} {props.results.base}
         </h5>
       </div>
       <div className="row align-items-center justify-content-center mt-4">
-        <h5 className="text-uppercase text-center  font-weight-bold ">
+        <h5 className="text-uppercase text-center text-white   font-weight-bold ">
           Effective Date: {props.results.date}
         </h5>
       </div>
       <div className="row  align-items-center justify-content-center mt-4">
-        <small className="text-center">
+        <small className="text-white  text-center">
           *Switch between cheque and cash for your currency conversions. Rates
           are subject to change without notice.
         </small>
