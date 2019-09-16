@@ -16,7 +16,7 @@ const Results = props => {
         </h4>
       </div>
       <div className="row align-items-center justify-content-center mt-3">
-        <h1 className="results text-center display-4">
+        <h1 className="results text-white  text-center display-4">
           {props.results.calculated}&nbsp;{props.results.convertTo}
         </h1>
       </div>
