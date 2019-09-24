@@ -114,6 +114,7 @@ class Admin
 		}
 		$screen = get_current_screen();
 		if ($this->plugin_screen_hook_suffix == $screen->id) {
+			wp_enqueue_style($this->plugin_slug . '-style', plugins_url('assets/css/bootstrap.min.css', dirname(__FILE__)), array(), $this->version);
 			wp_enqueue_style($this->plugin_slug . '-style', plugins_url('assets/css/admin.css', dirname(__FILE__)), array(), $this->version);
 		}
 	}
