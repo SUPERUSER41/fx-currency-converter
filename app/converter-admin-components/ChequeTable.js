@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
 import axios from "axios";
+import "../../assets/css/admin.css";
 import Alert from "react-bootstrap/Alert";
 
 // eslint-disable-next-line no-unused-vars
