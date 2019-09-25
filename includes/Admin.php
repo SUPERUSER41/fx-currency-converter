@@ -96,6 +96,7 @@ class Admin
 		// Add the options page and menu item.
 		add_action('admin_menu', array($this, 'add_plugin_admin_menu'));
 
+
 		// Add plugin action link point to settings page
 		add_filter('plugin_action_links_' . $this->plugin_basename, array($this, 'add_action_links'));
 	}
@@ -159,6 +160,13 @@ class Admin
 		 * Add a settings page for this plugin to the Settings menu.
 		 */
 		$this->plugin_screen_hook_suffix = add_options_page(
+			__('WP Currency Converter', $this->plugin_slug),
+			__('WP Currency Converter', $this->plugin_slug),
+			'manage_options',
+			$this->plugin_slug,
+			array($this, 'display_plugin_admin_page')
+		);
+		$this->plugin_screen_hook_suffix = add_menu_page(
 			__('WP Currency Converter', $this->plugin_slug),
 			__('WP Currency Converter', $this->plugin_slug),
 			'manage_options',
