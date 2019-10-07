@@ -28,6 +28,7 @@ const Results = props => {
           <button
             onClick={e => cancel(e)}
             type="button"
+            style={{ border: "1px solid white;" }}
             className="btn btn-secondary bg-transparent text-white cancel-btn"
           >
             Cancel
