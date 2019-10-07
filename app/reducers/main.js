@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import moment from "moment";
 
 const initState = {
@@ -49,6 +50,8 @@ const formatMoney = (
         : "")
     );
   } catch (e) {
+    // eslint-disable-next-line no-console
+    // eslint-disable-next-line no-undef
     console.log(e);
   }
 };
