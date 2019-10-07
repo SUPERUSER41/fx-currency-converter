@@ -114,7 +114,7 @@ const MainReducer = (state = initState, action) => {
 
           amount: formatMoney(state.amount),
           calculated: formatMoney(
-            state.selectedItem.data.cash.sell * state.amount
+            state.selectedItem.data.cash.buy * state.amount
           ),
           base: state.selectedItem.data.base,
           convertTo: "JMD",
@@ -133,7 +133,7 @@ const MainReducer = (state = initState, action) => {
             .format("MMMM Do YYYY | h:mm:ss a"),
           amount: formatMoney(state.amount),
           calculated: formatMoney(
-            state.selectedItem.data.cash.buy * state.amount
+            state.selectedItem.data.cash.sell * state.amount
           ),
           base: state.selectedItem.data.base,
           convertTo: "JMD",
