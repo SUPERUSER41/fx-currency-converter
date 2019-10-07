@@ -27,6 +27,10 @@ small {
     color: #ffffff !important;
 }
 
+.cancel-btn {
+    border: 1px solid white;
+}
+
 .exchange-rate {
     font-family: 'Archivo', sans-serif;
     font-size: 16px;
