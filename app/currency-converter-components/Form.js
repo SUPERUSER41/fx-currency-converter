@@ -8,7 +8,7 @@ const Form = props => {
   const handleInput = e => {
     props.saveLastCalculatedEntry(e);
     props.setAmount(e.target.value);
-    // props.calculate();
+    props.calculate();
   };
   const selectItem = (item, id, setShowItems) => {
     if (!props.toggle) {
