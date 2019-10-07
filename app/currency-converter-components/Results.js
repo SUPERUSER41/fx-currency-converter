@@ -37,13 +37,13 @@ const Results = props => {
       <div className="row align-items-center justify-content-center mt-5">
         {!props.toggle ? (
           <h5 className="text-center text-white exchange-rate">
-            Our buying rate: 1 {props.results.convertTo} = {props.results.buy}{" "}
-            {props.results.base}
+            <strong>Our buying rate: </strong> 1 {props.results.convertTo} ={" "}
+            {props.results.buy} {props.results.base}
           </h5>
         ) : (
           <h5 className="text-center text-white exchange-rate">
-            Our selling rate: 1 {props.results.base} = {props.results.sell}{" "}
-            {props.results.convertTo}
+            <stong>Our selling rate: </stong> 1 {props.results.base} ={" "}
+            {props.results.sell} {props.results.convertTo}
           </h5>
         )}
       </div>
