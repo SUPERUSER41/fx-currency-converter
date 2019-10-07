@@ -68,10 +68,7 @@ const App = props => {
             <Results />
           ) : (
             <div className="row align-items-center justify-content-center mt-4">
-              <small>
-                *Switch between cheque and cash for your currency conversions.
-                Rates are subject to change without notice.
-              </small>
+              <small>*Rates are subject to change without notice.</small>
             </div>
           )}
         </div>
