@@ -28,7 +28,7 @@ const Results = props => {
           <button
             onClick={e => cancel(e)}
             type="button"
-            className="btn btn-secondary bg-transparent text-white cancel-btn"
+            className="btn bg-transparent text-white cancel-btn"
           >
             Cancel
           </button>
