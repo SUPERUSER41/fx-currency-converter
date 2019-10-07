@@ -65,7 +65,7 @@ const App = props => {
             currencies={props.currencies}
           />
           {props.showResults ? (
-            <Results setBase={props.setBase} convertTo={props.convertTo} />
+            <Results />
           ) : (
             <div className="row align-items-center justify-content-center mt-4">
               <small>*Rates are subject to change without notice.</small>

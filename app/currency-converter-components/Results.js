@@ -35,11 +35,17 @@ const Results = props => {
         </div>
       </div>
       <div className="row align-items-center justify-content-center mt-5">
-        <h5 className="text-center text-white exchange-rate">
-          1 {props.results.base} = {props.results.sell}{" "}
-          {props.results.convertTo} | 1 {props.results.convertTo} ={" "}
-          {props.results.buy} {props.results.base}
-        </h5>
+        {!props.toggle ? (
+          <h5 className="text-center text-white exchange-rate">
+            Our buying rate: 1 {props.results.convertTo} = {props.results.buy}{" "}
+            {props.results.base}
+          </h5>
+        ) : (
+          <h5 className="text-center text-white exchange-rate">
+            Our selling rate: 1 {props.results.base} = {props.results.sell}{" "}
+            {props.results.convertTo}
+          </h5>
+        )}
       </div>
       <div className="row align-items-center justify-content-center mt-4">
         <h5 className="text-uppercase text-center text-white   font-weight-bold ">
@@ -54,9 +60,11 @@ const Results = props => {
     </div>
   );
 };
+
 const mapStateToProps = state => {
   return {
-    results: state.main.results
+    results: state.main.results,
+    toggle: state.main.toggle
   };
 };
 const mapDispatchToProps = dispatch => {
