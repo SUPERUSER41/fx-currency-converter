@@ -37,8 +37,10 @@ const App = props => {
   }, []);
 
   const swap = () => {
-    props.setBase(props.convertTo);
-    props.setConvertTo(props.base);
+    // props.setBase(props.convertTo);
+    // props.setConvertTo(props.base);
+    props.setBase(props.base);
+    props.setConvertTo(props.convertTo);
     setTimeout(() => {
       props.calculate();
     }, 100);
