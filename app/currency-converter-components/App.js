@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect } from "react";
 import axios from "axios";
-import Switch from "./Switch";
+import IPPSwitch from "./Switch";
 import Form from "./Form";
 import Results from "./Results";
 import "../../assets/css/App.css";
@@ -53,7 +53,7 @@ const App = props => {
               <h4 className="card-title">FX CURRENCY CONVERTER</h4>
             </div>
             <div className="col-md-3">
-              <Switch swap={swap} />
+              <IPPSwitch swap={swap} />
             </div>
           </div>
           <hr />
