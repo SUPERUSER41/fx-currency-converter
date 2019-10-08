@@ -42,8 +42,8 @@ const Results = props => {
           </h5>
         ) : (
           <h5 className="text-center text-white exchange-rate">
-            <strong>Our Selling Rate: </strong> 1 {props.results.base} ={" "}
-            {props.results.sell} {props.results.convertTo}
+            <strong>Our Selling Rate: </strong> 1 {props.results.convertTo} ={" "}
+            {props.results.sell} {props.results.base}
           </h5>
         )}
       </div>
