@@ -119,8 +119,10 @@ const MainReducer = (state = initState, action) => {
           calculated: formatMoney(
             state.selectedItem.data.cash.buy * state.amount
           ),
-          base: state.selectedItem.data.base,
-          convertTo: "JMD",
+          // base: state.selectedItem.data.base,
+          base: state.base.data.base,
+          // convertTo: "JMD",
+          convertTo: state.convertTo.data.base,
           sell: formatMoney(state.selectedItem.data.cash.sell),
           buy: formatMoney(state.selectedItem.data.cash.buy)
         };
@@ -139,8 +141,10 @@ const MainReducer = (state = initState, action) => {
           calculated: formatMoney(
             state.selectedItem.data.cash.sell * state.amount
           ),
-          base: state.selectedItem.data.base,
-          convertTo: "JMD",
+          // base: state.selectedItem.data.base,
+          base: state.base.data.base,
+          // convertTo: "JMD",
+          convertTo: state.convertTo.data.base,
           sell: formatMoney(state.selectedItem.data.cash.sell),
           buy: formatMoney(state.selectedItem.data.cash.buy)
         };
