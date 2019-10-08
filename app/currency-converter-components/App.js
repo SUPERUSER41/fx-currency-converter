@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
 import React, { useEffect } from "react";
@@ -37,8 +38,10 @@ const App = props => {
   }, []);
 
   const swap = () => {
-    props.setBase(props.base);
-    props.setConvertTo(props.convertTo);
+    props.setBase(props.convertTo);
+    props.setConvertTo(props.base);
+    console.log(props.convertTo);
+    console.log(props.base);
     setTimeout(() => {
       props.calculate();
     }, 100);
