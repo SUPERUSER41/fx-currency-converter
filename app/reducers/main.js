@@ -100,7 +100,7 @@ const MainReducer = (state = initState, action) => {
       selectedItem: action.selectedItem
     };
   } else if (action.type === "SET_CONVERT_TO") {
-    console.log(action.payload);
+    // console.log(action.payload);
     return {
       ...state,
       convertTo: action.payload
