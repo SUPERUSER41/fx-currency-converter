@@ -94,6 +94,7 @@ const MainReducer = (state = initState, action) => {
       amount: action.amount
     };
   } else if (action.type === "SET_SELECTED_ITEM") {
+    console.log(action.selectedItem);
     return {
       ...state,
       selectedItem: action.selectedItem

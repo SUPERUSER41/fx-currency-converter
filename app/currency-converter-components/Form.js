@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-console */
 /* eslint-disable react/prop-types */
 import React from "react";
 import Select from "./Select";
@@ -20,8 +22,9 @@ const Form = props => {
       }
     } else {
       if (id === "to") {
-        props.setBase(item);
         props.setSelectedItem(item);
+        console.log(item);
+        props.setBase(item);
       } else if (id === "from") {
         props.setConvertTo(item);
       }
