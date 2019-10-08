@@ -22,11 +22,11 @@ const Form = props => {
       }
     } else {
       if (id === "to") {
-        props.setSelectedItem(item);
-        console.log(item);
         props.setBase(item);
       } else if (id === "from") {
         props.setConvertTo(item);
+        props.setSelectedItem(item);
+        console.log(item);
       }
     }
     props.setShowResults(false);
