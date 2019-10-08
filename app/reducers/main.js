@@ -84,7 +84,6 @@ const MainReducer = (state = initState, action) => {
       currencies: action.currencies
     };
   } else if (action.type === "SET_BASE") {
-    console.log(action.base);
     return {
       ...state,
       base: action.base
@@ -100,7 +99,6 @@ const MainReducer = (state = initState, action) => {
       selectedItem: action.selectedItem
     };
   } else if (action.type === "SET_CONVERT_TO") {
-    // console.log(action.payload);
     return {
       ...state,
       convertTo: action.payload
@@ -117,7 +115,7 @@ const MainReducer = (state = initState, action) => {
 
           amount: formatMoney(state.amount),
           calculated: formatMoney(
-            state.selectedItem.data.cash.sell * state.amount
+            state.selectedItem.data.cash.buy * state.amount
           ),
           // base: state.selectedItem.data.base,
           base: state.base.data.base,
@@ -126,7 +124,7 @@ const MainReducer = (state = initState, action) => {
           sell: formatMoney(state.selectedItem.data.cash.sell),
           buy: formatMoney(state.selectedItem.data.cash.buy)
         };
-        // console.log(payLoad);
+
         return {
           ...state,
           results: payLoad,
@@ -138,8 +136,12 @@ const MainReducer = (state = initState, action) => {
             .unix(state.selectedItem.data.date._seconds)
             .format("MMMM Do YYYY | h:mm:ss a"),
           amount: formatMoney(state.amount),
+          // calculated: formatMoney(
+          //   state.selectedItem.data.cash.sell * state.amount
+
+          // ),
           calculated: formatMoney(
-            state.selectedItem.data.cash.buy * state.amount
+            state.amount / state.selectedItem.data.cash.sell
           ),
           // base: state.selectedItem.data.base,
           base: state.base.data.base,
@@ -148,7 +150,6 @@ const MainReducer = (state = initState, action) => {
           sell: formatMoney(state.selectedItem.data.cash.sell),
           buy: formatMoney(state.selectedItem.data.cash.buy)
         };
-        // console.log(payLoad);
 
         return {
           ...state,
