@@ -24,7 +24,7 @@ const initState = {
 
 const formatMoney = (
   amount,
-  decimalCount = 4,
+  decimalCount = 2,
   decimal = ".",
   thousands = ","
 ) => {
@@ -94,7 +94,6 @@ const MainReducer = (state = initState, action) => {
       amount: action.amount
     };
   } else if (action.type === "SET_SELECTED_ITEM") {
-    console.log(action.selectedItem);
     return {
       ...state,
       selectedItem: action.selectedItem
@@ -114,9 +113,10 @@ const MainReducer = (state = initState, action) => {
             .unix(state.selectedItem.data.date._seconds)
             .format("MMMM Do YYYY | h:mm:ss a"),
 
-          amount: formatMoney(state.amount),
+          amount: formatMoney(state.amount, state.amount < 1 ? 4 : 2),
           calculated: formatMoney(
-            state.selectedItem.data.cash.buy * state.amount
+            state.selectedItem.data.cash.buy * state.amount,
+            state.amount / state.selectedItem.data.cash.sell < 1 ? 4 : 2
           ),
           // base: state.selectedItem.data.base,
           base: state.base.data.base,
@@ -136,20 +136,21 @@ const MainReducer = (state = initState, action) => {
           date: moment
             .unix(state.selectedItem.data.date._seconds)
             .format("MMMM Do YYYY | h:mm:ss a"),
-          amount: formatMoney(state.amount),
+          amount: formatMoney(state.amount, state.amount < 1 ? 4 : 2),
           // calculated: formatMoney(
           //   state.selectedItem.data.cash.sell * state.amount
 
           // ),
           calculated: formatMoney(
-            state.amount / state.selectedItem.data.cash.sell
+            state.amount / state.selectedItem.data.cash.sell,
+            state.amount / state.selectedItem.data.cash.sell < 1 ? 4 : 2
           ),
           // base: state.selectedItem.data.base,
           base: state.base.data.base,
           // convertTo: "JMD",
           convertTo: state.convertTo.data.base,
           sell: formatMoney(1 / state.selectedItem.data.cash.sell),
-          buy: formatMoney(state.selectedItem.data.cash.buy)
+          buy: formatMoney(state.selectedItem.data.cash.buy, 2)
         };
 
         return {
