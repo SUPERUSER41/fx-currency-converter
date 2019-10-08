@@ -84,6 +84,7 @@ const MainReducer = (state = initState, action) => {
       currencies: action.currencies
     };
   } else if (action.type === "SET_BASE") {
+    console.log("base: " + action.base);
     return {
       ...state,
       base: action.base
@@ -99,6 +100,7 @@ const MainReducer = (state = initState, action) => {
       selectedItem: action.selectedItem
     };
   } else if (action.type === "SET_CONVERT_TO") {
+    console.log("convertTo: " + action.payload);
     return {
       ...state,
       convertTo: action.payload
@@ -122,7 +124,7 @@ const MainReducer = (state = initState, action) => {
           sell: formatMoney(state.selectedItem.data.cash.sell),
           buy: formatMoney(state.selectedItem.data.cash.buy)
         };
-        console.log(payLoad);
+        console.log("Selling: " + payLoad);
         return {
           ...state,
           results: payLoad,
@@ -142,7 +144,7 @@ const MainReducer = (state = initState, action) => {
           sell: formatMoney(state.selectedItem.data.cash.sell),
           buy: formatMoney(state.selectedItem.data.cash.buy)
         };
-        console.log(payLoad);
+        console.log("Buying: " + payLoad);
 
         return {
           ...state,
