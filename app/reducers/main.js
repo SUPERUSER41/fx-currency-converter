@@ -149,7 +149,7 @@ const MainReducer = (state = initState, action) => {
           base: state.base.data.base,
           // convertTo: "JMD",
           convertTo: state.convertTo.data.base,
-          sell: formatMoney(1 / state.selectedItem.data.cash.sell),
+          sell: formatMoney(state.selectedItem.data.cash.sell),
           buy: formatMoney(state.selectedItem.data.cash.buy, 2)
         };
 
