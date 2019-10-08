@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-console */
 import moment from "moment";
 
@@ -121,6 +122,7 @@ const MainReducer = (state = initState, action) => {
           sell: formatMoney(state.selectedItem.data.cash.sell),
           buy: formatMoney(state.selectedItem.data.cash.buy)
         };
+        console.log(payLoad);
         return {
           ...state,
           results: payLoad,
@@ -140,6 +142,7 @@ const MainReducer = (state = initState, action) => {
           sell: formatMoney(state.selectedItem.data.cash.sell),
           buy: formatMoney(state.selectedItem.data.cash.buy)
         };
+        console.log(payLoad);
 
         return {
           ...state,
