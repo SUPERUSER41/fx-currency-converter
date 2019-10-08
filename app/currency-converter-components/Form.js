@@ -26,7 +26,6 @@ const Form = props => {
       } else if (id === "from") {
         props.setConvertTo(item);
         props.setSelectedItem(item);
-        console.log(item);
       }
     }
     props.setShowResults(false);
