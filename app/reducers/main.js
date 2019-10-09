@@ -108,8 +108,7 @@ const MainReducer = (state = initState, action) => {
       return state;
     } else {
       if (state.toggle === false) {
-        const decimal =
-          state.amount / state.selectedItem.data.cash.sell < 1 ? 4 : 2;
+        let decimal = state.selectedItem.data.cash.buy * state.amount;
         const payLoad = {
           date: moment
             .unix(state.selectedItem.data.date._seconds)
@@ -118,7 +117,7 @@ const MainReducer = (state = initState, action) => {
           amount: formatMoney(state.amount, state.amount < 1 ? 4 : 2),
           calculated: formatMoney(
             state.selectedItem.data.cash.buy * state.amount,
-            decimal
+            decimal < 1 ? 4 : 2
           ),
           // base: state.selectedItem.data.base,
           base: state.base.data.base,
@@ -134,6 +133,7 @@ const MainReducer = (state = initState, action) => {
           showResults: true
         };
       } else {
+        let decimal = state.amount / state.selectedItem.data.cash.sell;
         const payLoad = {
           date: moment
             .unix(state.selectedItem.data.date._seconds)
@@ -145,7 +145,7 @@ const MainReducer = (state = initState, action) => {
           // ),
           calculated: formatMoney(
             state.amount / state.selectedItem.data.cash.sell,
-            decimal
+            decimal < 1 ? 4 : 2
           ),
           // base: state.selectedItem.data.base,
           base: state.base.data.base,
